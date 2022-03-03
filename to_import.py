@@ -8,7 +8,7 @@ from webdriver_manager.opera import OperaDriverManager
 #URL = "https://www.fischer.cz/"
 #URL = "https://www.fischer.sk/"
 #URL = "https://www.eximtours.cz/"
-URL = "https://www.etravel.cz"
+URL = "https://www.etravel.cz/"
 URL_FM = URL+"first-minute"
 import time
 from selenium.common.exceptions import TimeoutException
