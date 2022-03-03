@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Automation_Local_Deploy_PyCharm.iml" filepath="$PROJECT_DIR$/.idea/Automation_Local_Deploy_PyCharm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ET_Automation_Local_Deploy_PyCharm.iml" filepath="$PROJECT_DIR$/.idea/ET_Automation_Local_Deploy_PyCharm.iml" />
     </modules>
   </component>
 </project>
