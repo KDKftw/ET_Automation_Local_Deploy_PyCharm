@@ -21,7 +21,7 @@ def rowKarty_imgHoteluKarty_D(self, driver):
     try:
         print("TRY block start")
         rowKartyHoteluElement = self.driver.find_elements_by_xpath(rowKartyHoteluXpath)
-        if rowKartyHoteluElement[0].is_displayed():
+        if rowKartyHoteluElement[2].is_displayed():
             for WebElement in rowKartyHoteluElement:
                 jdouvidet = WebElement.is_displayed()
                 assert jdouvidet == True
@@ -46,7 +46,7 @@ def rowKarty_imgHoteluKarty_D(self, driver):
     try:
         print("TRY block start")
         imgHoteluElement = self.driver.find_elements_by_xpath(imgHotelKartaXpath)
-        if imgHoteluElement[0].is_displayed():
+        if imgHoteluElement[6].is_displayed():
             for WebElement in imgHoteluElement:
                 jdouvidet = WebElement.is_displayed()
                 assert jdouvidet == True

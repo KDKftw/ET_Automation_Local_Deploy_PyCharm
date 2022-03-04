@@ -26,3 +26,6 @@ class Test_FM_Exotika_D(unittest.TestCase):
         self.driver.get(URL_exotika)
         self.driver.maximize_window()
         acceptConsent(self.driver)
+        rowKarty_imgHoteluKarty_D(self, self.driver)
+        assert (self.driver.find_element_by_xpath(imgHotelKartaXpath)).is_displayed() == True
+        assert (self.driver.find_element_by_xpath(gridDestinationXpath)).is_displayed() == True

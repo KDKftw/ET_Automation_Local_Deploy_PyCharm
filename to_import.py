@@ -4,9 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from webdriver_manager.opera import OperaDriverManager
-URL = "https://www.etravel.cz/"
-URL_FM = URL+"first-minute"
-URL_exotika = URL + "exoticka-dovolena"
 import time
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoSuchElementException
@@ -15,6 +12,12 @@ from email.mime.text import MIMEText
 from to_import_secret import emailPass
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+
+URL = "https://www.etravel.cz/"
+URL_FM = URL+"first-minute"
+URL_exotika = URL + "exoticka-dovolena"
+URL_LM = URL+"last-minute"
+
 
 def setUp(self):
   self.driver = webdriver.Chrome(ChromeDriverManager().install())
