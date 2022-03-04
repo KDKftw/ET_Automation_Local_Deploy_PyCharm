@@ -6,11 +6,14 @@ from to_import import acceptConsent, closeExponeaBanner, URL_SRL, sendEmail, set
 import time
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
+import pyautogui as p
+p.FAILSAFE = False
 totalPriceXpath = "//*[@class='price-amount']"
 odNejdrazsihoSorterXpath = "//*[contains(text(), 'od nejdražšího')]"
 zobrazitNaMapeXpath = "//*[@class='c_btn white']"
 detailHoteluButtonXpath = "//*[@class='c_btn inline ellipsis green']"
 detailHoteluCenaAllXpath = "//*[@class='text-h3 text-green font-bold']"
+detailHoteluCross = "//*[@class='f_icon f_icon--cross']"
 class Test_SRL_C(unittest.TestCase):
     def setUp(self):
         setUp(self)
@@ -197,10 +200,6 @@ class Test_SRL_C(unittest.TestCase):
         assert currentUrl != URL_SRL
 
     def test_srl_C(self):
-         ##variable for taking the first hotel, starting at 0
-        windowHandle = 1  ##variable for handling windows, gotta start on 1
-
-        # URL_SRL = "https://fischer.web2.dtweb.cz/vysledky-vyhledavani?d=1009|953|1108|592|611|610|612|1010|590|726|609|621|680|622|669|1086|1194|670|978|594|675|683&tt=1&to=4312|4305|2682|4308&dd=2022-07-01&rd=2022-08-31&nn=7|8|9&ka1=8&kc1=1&ac1=2"
         self.driver.get(URL_SRL)
         wait = WebDriverWait(self.driver, 150000)
 
@@ -209,13 +208,14 @@ class Test_SRL_C(unittest.TestCase):
         time.sleep(2)
         closeExponeaBanner(self.driver)
 
+
         try:
             wait.until(EC.visibility_of(self.driver.find_elements_by_xpath(totalPriceXpath[0])))
         except NoSuchElementException:
             url = self.driver.current_url
             msg = " Problem SRL hotelyAllKarty" + url
             sendEmail(msg)
-        x = 0
+        x = 4
         for WebElement in self.driver.find_elements_by_xpath(totalPriceXpath):
 
             print("|||||HOTEL CISLO|||||||")
@@ -227,8 +227,27 @@ class Test_SRL_C(unittest.TestCase):
             cenaZajezduAll = self.driver.find_elements_by_xpath(totalPriceXpath)
             cenaZajezduAllString = cenaZajezduAll[x].text
             print(cenaZajezduAllString)
+            xBiggerThanFive = False
+            if x > 4 :
+                p.press("pagedown")
+
+                time.sleep(3)
+                xBiggerThanFive = True
+                xBigger5end = True
+            else:
+                pass
+            if x >10 and xBiggerThanFive == True:
+                p.press("pagedown")
+            else:
+                pass
+            if x > 15:
+                p.press("pagedown", presses=3)
+            else:
+                pass
 
             wait.until(EC.visibility_of(self.driver.find_elements_by_xpath(detailHoteluButtonXpath)[x])).click()
+
+
 
 
             time.sleep(5)
@@ -247,8 +266,7 @@ class Test_SRL_C(unittest.TestCase):
                 print("ceny all NESEDÍ srl vs detail")
 
             ##todod click na cancle
+            wait.until(EC.visibility_of(self.driver.find_element_by_xpath(detailHoteluCross))).click()
 
             x = x + 1
             print(x)
-            windowHandle = windowHandle + 1
-            print(windowHandle)
