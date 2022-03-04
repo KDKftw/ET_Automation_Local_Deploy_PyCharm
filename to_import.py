@@ -4,12 +4,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from webdriver_manager.opera import OperaDriverManager
-
-#URL = "https://www.fischer.cz/"
-#URL = "https://www.fischer.sk/"
-#URL = "https://www.eximtours.cz/"
 URL = "https://www.etravel.cz/"
 URL_FM = URL+"first-minute"
+URL_exotika = URL + "exoticka-dovolena"
 import time
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoSuchElementException
