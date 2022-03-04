@@ -26,7 +26,6 @@ class Test_HP_D(unittest.TestCase):
         acceptConsent(self.driver)
         wait = WebDriverWait(self.driver, 25)
         wait.until(EC.visibility_of(self.driver.find_element_by_xpath(hlavickaMenuXpath)))
-
         assert (self.driver.find_element_by_xpath(hlavickaMenuXpath)).is_displayed() == True
         assert (self.driver.find_element_by_xpath(zlutakHPXpath)).is_displayed() == True
         assert (self.driver.find_element_by_xpath(teaserFotkaMainXpath)).is_displayed() == True

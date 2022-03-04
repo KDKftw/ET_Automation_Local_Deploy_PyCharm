@@ -17,7 +17,7 @@ URL = "https://www.etravel.cz/"
 URL_FM = URL+"first-minute"
 URL_exotika = URL + "exoticka-dovolena"
 URL_LM = URL+"last-minute"
-
+URL_SRL = URL+"/vysledky-vyhledavani?d=63220|63281|63373|63442|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428&tt=0&to=4305|4309|2682|4308|4312&dd=2022-09-01&rd=2022-09-25&nn=7|8|9&ka1=5&kc1=1&ac1=2"
 
 def setUp(self):
   self.driver = webdriver.Chrome(ChromeDriverManager().install())
