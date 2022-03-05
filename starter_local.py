@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     #runner = HtmlTestRunner(title='My unit test', open_in_browser=True)
     #runner = HtmlTestRunner.HTMLTestRunner(output='example_dir')        ## this is ??
-    runner = HtmlTestRunner.HTMLTestRunner(log=True, verbosity=2, output='report', title='Test report- ETRAVEL', report_name='report',
+    runner = HtmlTestRunner.HTMLTestRunner(log=True, verbosity=2, output='report', title='Test report- ETRAVEL'+URL, report_name='report',
                             open_in_browser=True, description="HTMLTestReport")
 
     runner.run(suite())

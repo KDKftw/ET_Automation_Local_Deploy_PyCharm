@@ -22,6 +22,7 @@ URL_detail = URL + "egypt/hurghada/hurghada/mirage-bay-resort-a-aqua-park-hurgha
 #URL_detail = URL+"recko/lefkada/nidri/delfini-penzion?ds=1024&giata=538958&hid=141090&nn=7&df=2022-07-01|2022-09-01&rd=2022-09-01&dd=2022-08-25&ac1=2&kc1=1&ka1=5&tt=1&pid=335821&d=63220|63281|63373|63442|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428&mt=2&rt=15&dp=4305&mnn=7&nnm=7|8|9&ttm=1&dpr=EXIM%20TOURS&sortby=Price&sortorder=0"
 URL_detail_all_inclusive = URL_detail + "&mmt=5"
 URL_detail_airport_praha = URL_detail + "&tom=4312"
+URL_FT_results = URL + "hledani-vysledky?q="
 def setUp(self):
   self.driver = webdriver.Chrome(ChromeDriverManager().install())
   #self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
