@@ -10,16 +10,20 @@ query = "Mirage bay"
 
 querySDO = ["Zanzibar", "Řecko", "Turecko", "Egypt", "Kapverdy", "Oman" , "Maledivy", "Dubaj", "Mallorca", "Bulharsko", "Chorvatsko", "Kefalonia", "Attika" ]
 queryCommon = ["pojištění",  "parkování", "covid", "Funtazie" ]
-queryHotely = ["Mirage bay", "mitsis", "Prima life", "Prima life makadi", "Pegasos", "Pickalbatros", "Titanic", "mirage", "Domes Aulüs", "Bay & Mare",  "A for Art",
-               "Porto Skala 7", "Costa Azzurra", "La Cite", "Naftilos", "Stefanos", "Magnolia",  "White Gold", "King Tut Resort", "Blue Waters",
+queryHotely = ["Mirage bay",  "Prima life", "Prima life makadi", "Pegasos", "Pickalbatros", "Titanic", "mirage", "Bay & Mare",  "A for Art",
+               "Porto Skala 7", "Costa Azzurra", "La Cite",  "Stefanos", "Magnolia",  "White Gold", "King Tut Resort", "Blue Waters",
                "Primasol", "Doubletree"]
 queryList = querySDO+queryCommon+queryHotely
-
+#queryList = queryHotely
+failed_query = ["mitsis","Domes Aulüs","Naftilos", ]
 
 HPLupaFullTextXpath = "//*[@class='f_icon f_icon--magnifier']"
 HPinputBoxFullTextXpath = "//*[@class='flex-grow outline-none px-2 py-2 bg-transparent']"
 fullTextNaseptavacKartaHoteluXpath = "//*[@class='aspect-w-16 aspect-h-10']"
 fullTextNaseptavacTextResultsXpath = "//*[@class='text-base']"
+fullTextResultsKartaHoteluXpath = "//*[@class='aspect-w-16 aspect-h-10']"
+fullTextResultsKartaHoteluHrefXpath="//*[@class='my-4 grid gap-4 grid-cols-2 sm:grid-cols-3']/a"
+fullTextResultsTextHrefXpath="//*[@class='space-y-2 py-4']/a"
 class Test_Fulltext_C(unittest.TestCase):
     def setUp(self):
         setUp(self)
@@ -108,7 +112,7 @@ class Test_Fulltext_C(unittest.TestCase):
             print(queryList[poziceQueryItem].upper())
             linksToCheckList = []
             try:
-                vysledkyDlazdiceHotelu = driver.find_elements_by_xpath("//*[@class='f_tileGrid-item']/a")
+                vysledkyDlazdiceHotelu = driver.find_elements_by_xpath(fullTextResultsKartaHoteluHrefXpath)
                # wait.until(EC.visibility_of(vysledkyDlazdiceHotelu[0]))
                 x = 0
                 for _ in vysledkyDlazdiceHotelu:
@@ -116,8 +120,9 @@ class Test_Fulltext_C(unittest.TestCase):
                     x = x + 1
             except NoSuchElementException:
                 pass
-            vysledkyTextItems = driver.find_elements_by_xpath("//*[@class='f_fulltextResults-item']/a")
-            vysledkyTextItemsSingle = driver.find_element_by_xpath("//*[@class='f_fulltextResults-item']/a")
+            #print(linksToCheckList)
+            vysledkyTextItems = driver.find_elements_by_xpath(fullTextResultsTextHrefXpath)
+            vysledkyTextItemsSingle = driver.find_element_by_xpath(fullTextResultsTextHrefXpath)
             #wait.until(EC.visibility_of(vysledkyTextItems[0]))
             wait.until(EC.visibility_of(vysledkyTextItemsSingle))
             z = 0
