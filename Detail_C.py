@@ -1,6 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
-from to_import import acceptConsent, closeExponeaBanner, URL_detail, sendEmail, setUp, tearDown
+from to_import import acceptConsent, closeExponeaBanner, URL_detail, sendEmail, setUp, tearDown, URL_detail_all_inclusive
 import time
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
@@ -8,6 +8,7 @@ import requests
 imageDetailFirstXpath = "//*[@id='splide01-slide01']/img"
 terminyAcenyScrollMenuXpath = "/html/body/div[@id='app']/div/div[@class='c_hotel-anchor-nav']/div[@class='c_container']/ul[@class='c_customScroll']/li[2]/a"
 stravovaniBoxTerminyAcenyXpath = "//*[contains(text(), 'Stravování')][1]"
+stravovaniVysledkyTerminyAcenyXpath = "//*[@class='w-4/12 to-md:order-4 md:w-1/12 md:text-center']"
 class TestDetailHotelu_C(unittest.TestCase):
     def setUp(self):
         setUp(self)
@@ -54,7 +55,7 @@ class TestDetailHotelu_C(unittest.TestCase):
         assert response.status_code == 200
 
     def test_detail_terminy_filtr_meal(self):
-        self.driver.get(URL_detail)
+        self.driver.get(URL_detail_all_inclusive)
         wait = WebDriverWait(self.driver, 150000)
         acceptConsent(self.driver)
         time.sleep(1)
@@ -68,41 +69,10 @@ class TestDetailHotelu_C(unittest.TestCase):
             url = self.driver.current_url
             msg = "terminyAcenyScrollMenuXpath faild click " + url
             sendEmail(msg)
-        try:
-            stravovaniBox = self.driver.find_element_by_xpath(stravovaniBoxTerminyAcenyXpath)
-            wait.until(EC.visibility_of(stravovaniBox))
-            self.driver.execute_script("arguments[0].click();", stravovaniBox)
-            time.sleep(20)
-            try:
-                stravyBox = self.driver.find_elements_by_xpath("//*[@name='detailFilterCatering']")
 
-                self.driver.execute_script("arguments[0].click();", stravyBox[1])
+        zvolenaStravaVboxu = "All inclusive"
 
-                try:
-                    self.driver.execute_script("arguments[0].click();",
-                                               stravovaniBox)  ##workaround, klikni na box to confirm the choice
-
-                except NoSuchElementException:
-                    url = self.driver.current_url
-                    msg = "stravaBox, potvrzeni stravy na detailu hotelu problém, NoSuchElementException " + url
-                    sendEmail(msg)
-
-            except NoSuchElementException:
-                url = self.driver.current_url
-                msg = "allInclusiveBox, zvolení stravy na detailu hotelu problém, NoSuchElementException " + url
-                sendEmail(msg)
-
-        except NoSuchElementException:
-            url = self.driver.current_url
-            msg = "stravovaniBox, otevření filtru stravování detail hotelu, NoSuchElementException " + url
-            sendEmail(msg)
-
-        zvolenaStravaVboxu = self.driver.find_element_by_xpath("//*[@class='js-subvalue f_text--highlighted']")
-        zvolenaStravaVboxuString = zvolenaStravaVboxu.text
-        print(zvolenaStravaVboxuString)
-
-        stravaVterminech = self.driver.find_elements_by_xpath(
-            "//*[@class='fshr-termin-catering js-tooltip js-tooltip--onlyDesktop']")
+        stravaVterminech = self.driver.find_elements_by_xpath(stravovaniVysledkyTerminyAcenyXpath)
         stravaVterminechString = []
 
         ##ty for loopy se nezapnou pokud pocet vysledku bude 0
@@ -119,14 +89,16 @@ class TestDetailHotelu_C(unittest.TestCase):
         print(stravaVterminechString)
         y = 0
         for _ in stravaVterminechString:
-            assert stravaVterminechString[y] == zvolenaStravaVboxuString
-            if stravaVterminechString[y] == zvolenaStravaVboxuString:
+            #assert  == zvolenaStravaVboxu
+            assert zvolenaStravaVboxu in stravaVterminechString[y]
+           # if stravaVterminechString[y] == zvolenaStravaVboxu:
+            if zvolenaStravaVboxu in stravaVterminechString[y]:
                 print("ok")
                 ##print(y)
                 y = y + 1
             else:
                 url = self.driver.current_url
-                msg = "na detailu jsem vyfiltroval stravu " + zvolenaStravaVboxuString + "ale pry to nesedi říká python" + url
+                msg = "na detailu jsem vyfiltroval stravu " + zvolenaStravaVboxu + "ale pry to nesedi říká python" + url
                 sendEmail(msg)
                 y = y + 1
         time.sleep(1)
