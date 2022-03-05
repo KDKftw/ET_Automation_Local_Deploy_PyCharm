@@ -6,7 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import unittest
 import requests
 imageDetailFirstXpath = "//*[@id='splide01-slide01']/img"
-
+terminyAcenyScrollMenuXpath = "/html/body/div[@id='app']/div/div[@class='c_hotel-anchor-nav']/div[@class='c_container']/ul[@class='c_customScroll']/li[2]/a"
+stravovaniBoxTerminyAcenyXpath = "//*[contains(text(), 'Stravování')][1]"
 class TestDetailHotelu_C(unittest.TestCase):
     def setUp(self):
         setUp(self)
@@ -59,31 +60,19 @@ class TestDetailHotelu_C(unittest.TestCase):
         time.sleep(1)
         closeExponeaBanner(self.driver)
         try:
-            terminyCeny = self.driver.find_element_by_xpath("//*[@id='terminyaceny-tab']")
+            terminyCeny = self.driver.find_element_by_xpath(terminyAcenyScrollMenuXpath)
             wait.until(EC.visibility_of(terminyCeny))
             ##terminyCeny.click()
             self.driver.execute_script("arguments[0].click();", terminyCeny)
-            try:
-                potvrdit = self.driver.find_element_by_xpath("//*[@data-testid='popup-closeButton']")
-
-                self.driver.execute_script("arguments[0].click();", potvrdit)
-
-            except NoSuchElementException:
-                url = self.driver.current_url
-                msg = "Problem prepnuti na terminy a ceny na detailu hotelu,potvrdit,  NoSuchElementException " + url
-                sendEmail(msg)
-
-
         except NoSuchElementException:
             url = self.driver.current_url
-            msg = "Problem prepnuti na terminy a ceny na detailu hotelu, NoSuchElementException " + url
+            msg = "terminyAcenyScrollMenuXpath faild click " + url
             sendEmail(msg)
-
         try:
-            stravovaniBox = self.driver.find_element_by_xpath(
-                "//*[@class='fshr-button-content fshr-icon fshr-icon--forkSpoon js-selector--catering']")
+            stravovaniBox = self.driver.find_element_by_xpath(stravovaniBoxTerminyAcenyXpath)
             wait.until(EC.visibility_of(stravovaniBox))
             self.driver.execute_script("arguments[0].click();", stravovaniBox)
+            time.sleep(20)
             try:
                 stravyBox = self.driver.find_elements_by_xpath("//*[@name='detailFilterCatering']")
 
