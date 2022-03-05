@@ -206,7 +206,7 @@ class Test_SRL_C(unittest.TestCase):
         print(URL_SRL)
         assert currentUrl != URL_SRL
 
-    def test_SRL_strava_polopenze(self):
+    def test_SRL_filtr_strava(self):
         driver = self.driver
         driver.get(URL_SRL)
         wait = WebDriverWait(driver, 12)

@@ -1,6 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
-from to_import import acceptConsent, closeExponeaBanner, URL_detail, sendEmail, setUp, tearDown, URL_detail_all_inclusive
+from to_import import acceptConsent, closeExponeaBanner, URL_detail, sendEmail, setUp, tearDown, URL_detail_all_inclusive, URL_detail_airport_praha
 import time
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
@@ -9,6 +9,7 @@ imageDetailFirstXpath = "//*[@id='splide01-slide01']/img"
 terminyAcenyScrollMenuXpath = "/html/body/div[@id='app']/div/div[@class='c_hotel-anchor-nav']/div[@class='c_container']/ul[@class='c_customScroll']/li[2]/a"
 stravovaniBoxTerminyAcenyXpath = "//*[contains(text(), 'Stravování')][1]"
 stravovaniVysledkyTerminyAcenyXpath = "//*[@class='w-4/12 to-md:order-4 md:w-1/12 md:text-center']"
+airportVysledkyTerminyAcenyXpath = "//*[@class='w-4/12 md:w-1/12 md:text-center']"
 class TestDetailHotelu_C(unittest.TestCase):
     def setUp(self):
         setUp(self)
@@ -103,3 +104,53 @@ class TestDetailHotelu_C(unittest.TestCase):
                 y = y + 1
         time.sleep(1)
         ##print(stravaVterminech)
+
+    def test_detail_terminy_filtr_airport(self):
+            self.driver.get(URL_detail_airport_praha)
+            wait = WebDriverWait(self.driver, 150000)
+            acceptConsent(self.driver)
+            time.sleep(1)
+            closeExponeaBanner(self.driver)
+            try:
+                terminyCeny = self.driver.find_element_by_xpath(terminyAcenyScrollMenuXpath)
+                wait.until(EC.visibility_of(terminyCeny))
+                ##terminyCeny.click()
+                self.driver.execute_script("arguments[0].click();", terminyCeny)
+            except NoSuchElementException:
+                url = self.driver.current_url
+                msg = "terminyAcenyScrollMenuXpath faild click " + url
+                sendEmail(msg)
+
+            zvolenaAiportVboxu = "Praha"
+
+            airportVterminech = self.driver.find_elements_by_xpath(airportVysledkyTerminyAcenyXpath)
+            airportVterminechString = []
+
+            ##ty for loopy se nezapnou pokud pocet vysledku bude 0
+            ##takze treba exim a dx bude casto takto jelikoz se tam nabizi vsechny
+            ##stravy, ne jen ty available
+            x = 0
+            for _ in airportVterminech:
+                stringos = airportVterminech[x].text
+                airportVterminechString.append(stringos)
+                x = x + 1
+
+            time.sleep(1)  ###eroror element is not attached ?  tak chvilku cekacka mozna to solvne
+
+            print(airportVterminechString)
+            y = 0
+            for _ in airportVterminechString:
+                # assert  == zvolenaStravaVboxu
+                assert zvolenaAiportVboxu in airportVterminechString[y]
+                # if stravaVterminechString[y] == zvolenaStravaVboxu:
+                if zvolenaAiportVboxu in airportVterminechString[y]:
+                    print("ok")
+                    ##print(y)
+                    y = y + 1
+                else:
+                    url = self.driver.current_url
+                    msg = "na detailu jsem vyfiltroval stravu " + zvolenaAiportVboxu + "ale pry to nesedi říká python" + url
+                    sendEmail(msg)
+                    y = y + 1
+            time.sleep(1)
+            ##print(stravaVterminech)
