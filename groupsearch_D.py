@@ -3,7 +3,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from to_import import acceptConsent, URL_groupsearch, setUp, tearDown
 import unittest
 from selenium.webdriver.support import expected_conditions as EC
-emptyImgInTeaserDestinationXpath = "background-image: url('https://cdn.fischer.cz/Images/000000/1200x0.jpg');"
+emptyImgInTeaserDestinationXpath = """//*[@style='background-image: url("https://cdn.fischer.cz/Images/000000/1200x0.jpg");']"""
+empty1 = ''
 teaserItemsXpath = "//*[@class='c_tile-category']"
 destinationsHighlightXpath = "//*[@class='c_title large center']"
 class Test_Groupsearch_D(unittest.TestCase):
@@ -59,10 +60,27 @@ class Test_Groupsearch_D(unittest.TestCase):
                 else:
                     pass
                     print("Else")
-
+        except NoSuchElementException:
+            pass
 
 
         except NoSuchElementException:
             pass
             print("no such")
         assert destinationsHL[0].is_displayed() == True
+
+        emptyImgsList = []
+        emptyImgsListCounter=0
+        emptyImgs = driver.find_elements_by_xpath(emptyImgInTeaserDestinationXpath)
+        try:
+            emptyImgs = driver.find_elements_by_xpath(emptyImgInTeaserDestinationXpath)
+            for WebElement in emptyImgs:
+                emptyImgsList.append(emptyImgs[emptyImgsListCounter].text)
+                print(emptyImgs[emptyImgsListCounter].text)
+                emptyImgsListCounter = emptyImgsListCounter+1
+
+        except NoSuchElementException:
+            pass
+
+        print("následující destinace mají prázdný teaser obrazek")
+        print(emptyImgsList)

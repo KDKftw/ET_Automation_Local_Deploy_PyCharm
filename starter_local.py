@@ -1,8 +1,8 @@
 #from Detail_D import *
 from Detail_C import *
 from FM_Exotika_D import *
-#from fulltext_C import *
-#from groupsearch_D import *
+from fulltext_C import *
+from groupsearch_D import *
 from HP_D import *
 from LM_D import *
 
@@ -20,9 +20,9 @@ def suite():
     suite.addTest(TestDetailHotelu_C("test_detail_terminy_filtr_airport"))
     suite.addTest(Test_FM_Exotika_D("test_FM_D"))
     suite.addTest(Test_FM_Exotika_D("test_Exotika_D"))
-    #suite.addTest(Test_Fulltext_C("test_fulltext_naseptavac"))
-    #suite.addTest(Test_Fulltext_C("test_fulltext_results_status_check"))
-    #suite.addTest(Test_Groupsearch_D("test_groupsearch_D"))
+    suite.addTest(Test_Fulltext_C("test_fulltext_naseptavac"))
+    suite.addTest(Test_Fulltext_C("test_fulltext_results_status_check"))
+    suite.addTest(Test_Groupsearch_D("test_groupsearch_D"))
     suite.addTest(Test_HP_D("test_HP_D"))
     suite.addTest(Test_LM_D("test_LM_D"))
 
