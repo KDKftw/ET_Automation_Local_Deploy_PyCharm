@@ -19,6 +19,7 @@ URL_exotika = URL + "exoticka-dovolena"
 URL_LM = URL+"last-minute"
 URL_SRL = URL+"vysledky-vyhledavani?d=63220|63281|63373|63442|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428&tt=0&to=4305|4309|2682|4308|4312&dd=2022-09-01&rd=2022-09-25&nn=7|8|9&ka1=5&kc1=1&ac1=2"
 #URL_SRL = URL+"vysledky-vyhledavani?d=64419|64420|64425|64423&tt=0&to=4305|4309|2682|4308|4312&dd=2022-09-01&rd=2022-09-25&nn=7|8|9&ka1=5&kc1=1&ac1=2"
+URL_detail = URL + "egypt/hurghada/hurghada/mirage-bay-resort-a-aqua-park-hurghada?DS=1024&GIATA=16351&D=64419|64420|64425|64423&HID=5057&MT=5&RT=15&NN=7&DF=2022-07-01|2022-08-31&RD=2022-07-20&DD=2022-07-13&AC1=2&KC1=1&KA1=5&IC1=0&DP=2682&MNN=7&NNM=7|8|9&TT=1&TTM=1&PID=33040&DPR=EXIM%20TOURS"
 def setUp(self):
   self.driver = webdriver.Chrome(ChromeDriverManager().install())
   #self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
