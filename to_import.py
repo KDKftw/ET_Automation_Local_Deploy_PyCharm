@@ -17,8 +17,8 @@ URL = "https://www.etravel.cz/"
 URL_FM = URL+"first-minute"
 URL_exotika = URL + "exoticka-dovolena"
 URL_LM = URL+"last-minute"
-#URL_SRL = URL+"vysledky-vyhledavani?d=63220|63281|63373|63442|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428&tt=0&to=4305|4309|2682|4308|4312&dd=2022-09-01&rd=2022-09-25&nn=7|8|9&ka1=5&kc1=1&ac1=2"
-URL_SRL = URL+"vysledky-vyhledavani?d=64419|64420|64425|64423&tt=0&to=4305|4309|2682|4308|4312&dd=2022-09-01&rd=2022-09-25&nn=7|8|9&ka1=5&kc1=1&ac1=2"
+URL_SRL = URL+"vysledky-vyhledavani?d=63220|63281|63373|63442|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428&tt=0&to=4305|4309|2682|4308|4312&dd=2022-09-01&rd=2022-09-25&nn=7|8|9&ka1=5&kc1=1&ac1=2"
+#URL_SRL = URL+"vysledky-vyhledavani?d=64419|64420|64425|64423&tt=0&to=4305|4309|2682|4308|4312&dd=2022-09-01&rd=2022-09-25&nn=7|8|9&ka1=5&kc1=1&ac1=2"
 def setUp(self):
   self.driver = webdriver.Chrome(ChromeDriverManager().install())
   #self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
@@ -27,6 +27,16 @@ def setUp(self):
 
 def tearDown(self):
   self.driver.quit()
+
+def returnLocatorForMealHotelKarty(poziceHotelu):
+    string1 = "/ html / body / div[ @ id = 'app'] / div[ @ id = 'c_page-mainSearch'] / div[ @class ='hotel-results-section'] / div[@ class ='hotel-results-content'][1] / div[@ class ='tile-hotel-section'] / div[@ class ='items'] / div[@ class ='flex']["
+    stringVariable = poziceHotelu
+    stringVariable = str(stringVariable)
+    string2 = "] / a[@ class ='c_tile-hotel'] / div[@ class ='inner'] / div[@ class ='section-border'] / div[@ class ='c_row'][2] / span[1]"
+    finalString = string1 + stringVariable + string2
+    finalString = finalString.replace(" ", "")
+    #print(finalString)
+    return str(finalString)
 
 def sendEmail(msg):
   fromx = 'alertserverproblem@gmail.com'

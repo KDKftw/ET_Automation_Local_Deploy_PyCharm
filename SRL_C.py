@@ -2,7 +2,7 @@
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementNotInteractableException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from to_import import acceptConsent, closeExponeaBanner, URL_SRL, sendEmail, setUp, tearDown
+from to_import import acceptConsent, closeExponeaBanner, URL_SRL, sendEmail, setUp, tearDown, returnLocatorForMealHotelKarty
 import time
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
@@ -15,6 +15,12 @@ detailHoteluButtonXpath = "//*[@class='c_btn inline ellipsis green']"
 detailHoteluCenaAllXpath = "//*[@class='text-h3 text-green font-bold']"
 detailHoteluCross = "//*[@class='f_icon f_icon--cross']"
 chatCrossXpath = "//*[@id='daktela-web-greeting-close']"
+#SDO_Strava_row_karta_hotelu_Xpath = "//*[@class='c_row'][2]"
+SDO_Strava_row_karta_hotelu_Xpath = "//*[@class='c_row']/span/i"
+
+
+
+returnLocatorForMealHotelKarty(1)
 class Test_SRL_C(unittest.TestCase):
     def setUp(self):
         setUp(self)
@@ -199,6 +205,29 @@ class Test_SRL_C(unittest.TestCase):
         print(currentUrl)
         print(URL_SRL)
         assert currentUrl != URL_SRL
+
+    def test_SRL_strava_polopenze(self):
+        driver = self.driver
+        driver.get(URL_SRL)
+        wait = WebDriverWait(driver, 12)
+        time.sleep(5)
+        self.driver.maximize_window()
+        acceptConsent(driver)
+
+        wait.until(EC.visibility_of(self.driver.find_element_by_xpath(SDO_Strava_row_karta_hotelu_Xpath)))
+        SDOstravaRowKartaElement = self.driver.find_elements_by_xpath(SDO_Strava_row_karta_hotelu_Xpath)
+        x=1
+        #for _ in SDOstravaRowKartaElement:
+        #for _ in (self.driver.find_elements_by_xpath(detailHoteluCenaAllXpath)):
+        for i in range(19):
+            stravaHoteluXpathCreator = returnLocatorForMealHotelKarty(x)
+            #print(stravaHoteluXpathCreator)
+            stravaHoteluVkarte = self.driver.find_elements_by_xpath(stravaHoteluXpathCreator)
+            print(stravaHoteluVkarte[0].text)
+            #assert stravaHoteluVkarte[0].text == "All inclusive"
+            #print(stravaHoteluVkarte[0])
+            #print(SDOstravaRowKartaElement[x].text)
+            x=x+1
 
     def test_srl_C(self):
         self.driver.get(URL_SRL)
