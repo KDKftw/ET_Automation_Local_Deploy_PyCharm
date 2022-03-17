@@ -20,6 +20,7 @@ class Test_Groupsearch_D(unittest.TestCase):
         self.driver.get(URL_groupsearch)
         self.driver.maximize_window()
         acceptConsent(self.driver)
+        driver.implicitly_wait(100)
         teaserItems = driver.find_elements_by_xpath(teaserItemsXpath)
         wait.until(EC.visibility_of(teaserItems[0]))
         try:
@@ -46,6 +47,7 @@ class Test_Groupsearch_D(unittest.TestCase):
 
         assert teaserItems[0].is_displayed() == True
 
+        driver.implicitly_wait(100)
         destinationsHL = driver.find_elements_by_xpath(destinationsHighlightXpath)
         try:
             for WebElement in destinationsHL:
