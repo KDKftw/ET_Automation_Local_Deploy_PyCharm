@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
-from to_import import acceptConsent, URL, setUp, tearDown, URL_FT_results
+from to_import import acceptConsent, URL, setUp, tearDown, URL_FT_results, generalDriverWaitImplicit
 import time
 import unittest
 import requests
@@ -48,6 +48,7 @@ class Test_Fulltext_C(unittest.TestCase):
             #inputBox =
             # inputBox.send_keys(queryList[poziceQueryItem])
             time.sleep(0.7)
+            generalDriverWaitImplicit(self.driver)
             wait.until(EC.visibility_of(self.driver.find_element_by_xpath(HPinputBoxFullTextXpath))).send_keys(queryList[poziceQueryItem])
             time.sleep(0.7)
             # inputBox.send_keys(Keys.ENTER)

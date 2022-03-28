@@ -2,7 +2,7 @@
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementNotInteractableException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from to_import import acceptConsent, closeExponeaBanner, URL_SRL, sendEmail, setUp, tearDown, returnLocatorForMealHotelKarty
+from to_import import acceptConsent, closeExponeaBanner, URL_SRL, sendEmail, setUp, tearDown, returnLocatorForMealHotelKarty, generalDriverWaitImplicit
 import time
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
@@ -53,8 +53,8 @@ class Test_SRL_C(unittest.TestCase):
         else:
             print("Razeni od nejlevnejsiho je spatne")
 
-        #print(cenaZajezduAllList)
-        #print(cenaZajezduAllListSorted)
+        print(cenaZajezduAllList)
+        print(cenaZajezduAllListSorted)
 
         assert cenaZajezduAllListSorted == cenaZajezduAllList
     def test_SRL_sort_expensive(self):
@@ -231,7 +231,8 @@ class Test_SRL_C(unittest.TestCase):
 
     def test_srl_C(self):
         self.driver.get(URL_SRL)
-        wait = WebDriverWait(self.driver, 150000)
+        #wait = WebDriverWait(self.driver, 150000)
+        wait = WebDriverWait(self.driver, 15)
 
         time.sleep(2)
         acceptConsent(self.driver)
@@ -239,7 +240,9 @@ class Test_SRL_C(unittest.TestCase):
         closeExponeaBanner(self.driver)
 
         #wait.until(EC.visibility_of(self.driver.find_element_by_xpath(chatCrossXpath)).click())
-        wait.until(EC.visibility_of(self.driver.find_element_by_xpath(chatCrossXpath))).click()
+        generalDriverWaitImplicit(self.driver)
+        self.driver.find_element_by_xpath(chatCrossXpath).click()
+        #wait.until(EC.visibility_of(self.driver.find_element_by_xpath(chatCrossXpath))).click()
         try:
             wait.until(EC.visibility_of(self.driver.find_elements_by_xpath(totalPriceXpath[0])))
         except NoSuchElementException:
@@ -273,8 +276,9 @@ class Test_SRL_C(unittest.TestCase):
             x = x + 1
             print(x)
 
-        p.press("pagedown")
-
+        #p.press("pagedown")
+        detailHoteluButtonElement = self.driver.find_elements_by_xpath(detailHoteluButtonXpath[x])
+        self.driver.execute_script("arguments[0].scrollIntoView();", detailHoteluButtonElement)
         time.sleep(1)
         x=5
         for i in range(5):
@@ -331,8 +335,9 @@ class Test_SRL_C(unittest.TestCase):
             x = x + 1
             print(x)
 
-        p.press("pagedown")
-
+        #p.press("pagedown")
+        detailHoteluButtonElement = self.driver.find_elements_by_xpath(detailHoteluButtonXpath[x])
+        self.driver.execute_script("arguments[0].scrollIntoView();", detailHoteluButtonElement)
         time.sleep(1)
         x = 15
         for i in range(5):

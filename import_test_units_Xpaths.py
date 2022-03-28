@@ -1,6 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
-from to_import import acceptConsent, URL_FM, sendEmail, setUp, tearDown
+from to_import import acceptConsent, URL_FM, sendEmail, setUp, tearDown, generalDriverWaitImplicit
 import time
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
@@ -22,6 +22,7 @@ def rowKarty_imgHoteluKarty_D(self, driver):
     print("wait done")
     try:
         print("TRY block start")
+        generalDriverWaitImplicit(self.driver)
         rowKartyHoteluElement = self.driver.find_elements_by_xpath(rowKartyHoteluXpath)
         if rowKartyHoteluElement[2].is_displayed():
             for WebElement in rowKartyHoteluElement:
@@ -48,8 +49,9 @@ def rowKarty_imgHoteluKarty_D(self, driver):
     print("wait done")
     try:
         print("TRY block start")
+        generalDriverWaitImplicit(self.driver)
         imgHoteluElement = self.driver.find_elements_by_xpath(imgHotelKartaXpath)
-        if imgHoteluElement[6].is_displayed():
+        if imgHoteluElement[3].is_displayed():
             for WebElement in imgHoteluElement:
                 jdouvidet = WebElement.is_displayed()
                 assert jdouvidet == True

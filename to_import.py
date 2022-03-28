@@ -37,7 +37,8 @@ def tearDown(self):
 def generalDriverWaitImplicit(driver):
   driver.implicitly_wait(25)
 def acceptConsent(driver):
-
+  driver.maximize_window()
+  generalDriverWaitImplicit(driver)
   generalDriverWaitImplicit(driver)
   # time.sleep(5)
   try:
