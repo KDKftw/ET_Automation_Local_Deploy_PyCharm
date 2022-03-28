@@ -1,0 +1,335 @@
+2022-03-28 10:52:50.122734 : 
+                             
+                             
+2022-03-28 10:52:50.122734 : ====== WebDriver manager ======
+                             
+2022-03-28 10:52:50.141728 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:52:50.141728 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:52:50.258690 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:53:04.728090 : nenasle se exponea banner
+2022-03-28 10:53:05.344894 : https://img.eximtours.cz/hotels/egypt/oblast-hurghada/hurghada/mirage-bay-resort-a-aqua-park/166173.jpeg
+2022-03-28 10:53:05.822741 : its ok
+2022-03-28 10:53:08.424344 : 
+                             
+                             
+2022-03-28 10:53:08.424344 : ====== WebDriver manager ======
+                             
+2022-03-28 10:53:08.445352 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:53:08.445352 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:53:08.577295 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:53:21.874670 : nenasle se exponea banner
+2022-03-28 10:53:23.747667 : ['All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive', 'All inclusive']
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:23.747667 : ok
+2022-03-28 10:53:27.216030 : 
+                             
+                             
+2022-03-28 10:53:27.216030 : ====== WebDriver manager ======
+                             
+2022-03-28 10:53:27.237024 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:53:27.237024 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:53:27.302002 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:53:40.905392 : nenasle se exponea banner
+2022-03-28 10:53:42.681983 : ['Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha', 'Praha']
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:42.681983 : ok
+2022-03-28 10:53:45.927903 : 
+                             
+                             
+2022-03-28 10:53:45.927903 : ====== WebDriver manager ======
+                             
+2022-03-28 10:53:45.974874 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:53:45.974874 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:53:46.051150 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:53:55.028126 : wait done
+2022-03-28 10:53:55.028126 : TRY block start
+2022-03-28 10:53:55.079099 : JDOU VIDET
+2022-03-28 10:53:55.089096 : JDOU VIDET
+2022-03-28 10:53:55.094966 : JDOU VIDET
+2022-03-28 10:53:55.101967 : JDOU VIDET
+2022-03-28 10:53:55.108984 : JDOU VIDET
+2022-03-28 10:53:55.150952 : wait done
+2022-03-28 10:53:55.150952 : TRY block start
+2022-03-28 10:53:55.186938 : JDOU VIDET
+2022-03-28 10:53:55.200935 : JDOU VIDET
+2022-03-28 10:53:55.208932 : JDOU VIDET
+2022-03-28 10:53:55.217949 : JDOU VIDET
+2022-03-28 10:53:55.225127 : JDOU VIDET
+2022-03-28 10:53:55.232124 : JDOU VIDET
+2022-03-28 10:53:55.239123 : JDOU VIDET
+2022-03-28 10:53:55.246120 : JDOU VIDET
+2022-03-28 10:53:55.261116 : JDOU VIDET
+2022-03-28 10:53:55.270113 : JDOU VIDET
+2022-03-28 10:53:55.278110 : JDOU VIDET
+2022-03-28 10:53:55.286108 : JDOU VIDET
+2022-03-28 10:53:55.293105 : JDOU VIDET
+2022-03-28 10:53:55.300104 : JDOU VIDET
+2022-03-28 10:53:55.307101 : JDOU VIDET
+2022-03-28 10:53:57.650149 : 
+                             
+                             
+2022-03-28 10:53:57.650149 : ====== WebDriver manager ======
+                             
+2022-03-28 10:53:57.677191 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:53:57.677191 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:53:57.763356 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:54:08.037782 : wait done
+2022-03-28 10:54:08.037782 : TRY block start
+2022-03-28 10:54:08.109759 : JDOU VIDET
+2022-03-28 10:54:08.117757 : JDOU VIDET
+2022-03-28 10:54:08.124754 : JDOU VIDET
+2022-03-28 10:54:08.131752 : JDOU VIDET
+2022-03-28 10:54:08.137749 : JDOU VIDET
+2022-03-28 10:54:08.154748 : JDOU VIDET
+2022-03-28 10:54:08.221724 : wait done
+2022-03-28 10:54:08.221724 : TRY block start
+2022-03-28 10:54:08.263709 : JDOU VIDET
+2022-03-28 10:54:08.270707 : JDOU VIDET
+2022-03-28 10:54:08.279706 : JDOU VIDET
+2022-03-28 10:54:08.286703 : JDOU VIDET
+2022-03-28 10:54:08.294700 : JDOU VIDET
+2022-03-28 10:54:08.339686 : JDOU VIDET
+2022-03-28 10:54:08.346683 : JDOU VIDET
+2022-03-28 10:54:08.354681 : JDOU VIDET
+2022-03-28 10:54:08.363678 : JDOU VIDET
+2022-03-28 10:54:08.370676 : JDOU VIDET
+2022-03-28 10:54:08.379673 : JDOU VIDET
+2022-03-28 10:54:08.386670 : JDOU VIDET
+2022-03-28 10:54:10.724379 : 
+                             
+                             
+2022-03-28 10:54:10.724379 : ====== WebDriver manager ======
+                             
+2022-03-28 10:54:10.779516 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:54:10.779516 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:54:10.873856 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:54:22.630381 : 
+                             
+                             
+2022-03-28 10:54:22.631382 : ====== WebDriver manager ======
+                             
+2022-03-28 10:54:22.663631 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:54:22.663631 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:54:22.810465 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:54:32.473303 : ZANZIBAR
+2022-03-28 10:54:36.524188 : ØECKO
+2022-03-28 10:54:40.101898 : TURECKO
+2022-03-28 10:54:43.780003 : EGYPT
+2022-03-28 10:54:46.521021 : KAPVERDY
+2022-03-28 10:54:52.463644 : OMAN
+2022-03-28 10:54:57.056389 : MALEDIVY
+2022-03-28 10:55:02.368133 : DUBAJ
+2022-03-28 10:55:05.964005 : MALLORCA
+2022-03-28 10:55:10.379028 : BULHARSKO
+2022-03-28 10:55:14.534402 : CHORVATSKO
+2022-03-28 10:55:57.916214 : KEFALONIA
+2022-03-28 10:56:02.970716 : ATTIKA
+2022-03-28 10:56:04.666014 : POJIŠTÌNÍ
+2022-03-28 10:56:09.228407 : PARKOVÁNÍ
+2022-03-28 10:56:12.961552 : COVID
+2022-03-28 10:56:17.845666 : FUNTAZIE
+2022-03-28 10:56:23.719437 : MIRAGE BAY
+2022-03-28 10:56:40.421169 : PRIMA LIFE
+2022-03-28 10:56:42.730330 : 
+                             
+                             
+2022-03-28 10:56:42.730330 : ====== WebDriver manager ======
+                             
+2022-03-28 10:56:42.776287 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:56:42.776287 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:56:42.863274 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:57:55.639153 : Senegal
+                             2 hotely od 30 388 Kè / osoba
+2022-03-28 10:57:55.683137 : Estonsko
+                             1 hotel od 33 588 Kè / osoba
+2022-03-28 10:57:55.755115 : Gruzie
+                             1 hotel od 39 588 Kè / osoba
+2022-03-28 10:57:55.779108 : Jižní Korea
+                             2 hotely od 71 760 Kè / osoba
+2022-03-28 10:57:55.800101 : Aruba
+                             7 hotelù od 58 868 Kè / osoba
+2022-03-28 10:57:55.818095 : Sv. Vincent a Grenadiny
+                             1 hotel od 197 388 Kè / osoba
+2022-03-28 10:57:55.836088 : Komory
+                             1 hotel od 97 388 Kè / osoba
+2022-03-28 10:57:55.856082 : Senegal
+                             2 hotely od 30 388 Kè / osoba
+2022-03-28 10:57:55.877437 : Franc. Polynésie
+                             4 hotely od 237 724 Kè / osoba
+2022-03-28 10:57:55.877437 : následující destinace mají prázdný teaser obrazek
+2022-03-28 10:57:55.877437 : ['Senegal\n2 hotely od 30 388 Kè / osoba', 'Estonsko\n1 hotel od 33 588 Kè / osoba', 'Gruzie\n1 hotel od 39 588 Kè / osoba', 'Jižní Korea\n2 hotely od 71 760 Kè / osoba', 'Aruba\n7 hotelù od 58 868 Kè / osoba', 'Sv. Vincent a Grenadiny\n1 hotel od 197 388 Kè / osoba', 'Komory\n1 hotel od 97 388 Kè / osoba', 'Senegal\n2 hotely od 30 388 Kè / osoba', 'Franc. Polynésie\n4 hotely od 237 724 Kè / osoba']
+2022-03-28 10:57:58.099874 : 
+                             
+                             
+2022-03-28 10:57:58.099874 : ====== WebDriver manager ======
+                             
+2022-03-28 10:57:58.120868 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:57:58.120868 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:57:58.214895 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:58:12.683043 : 
+                             
+                             
+2022-03-28 10:58:12.684043 : ====== WebDriver manager ======
+                             
+2022-03-28 10:58:12.723037 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:58:12.724053 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:58:12.821961 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:58:24.746275 : wait done
+2022-03-28 10:58:24.746275 : TRY block start
+2022-03-28 10:58:24.788262 : JDOU VIDET
+2022-03-28 10:58:24.795259 : JDOU VIDET
+2022-03-28 10:58:24.805257 : JDOU VIDET
+2022-03-28 10:58:24.838246 : wait done
+2022-03-28 10:58:24.838246 : TRY block start
+2022-03-28 10:58:27.050060 : 
+                             
+                             
+2022-03-28 10:58:27.050060 : ====== WebDriver manager ======
+                             
+2022-03-28 10:58:27.085047 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:58:27.085047 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:58:27.165106 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:58:36.503623 : Razeni od nejlevnejsiho je OK
+2022-03-28 10:58:38.637297 : 
+                             
+                             
+2022-03-28 10:58:38.637297 : ====== WebDriver manager ======
+                             
+2022-03-28 10:58:38.683277 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:58:38.683277 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:58:38.892714 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:58:54.273534 : Razeni od nejdrazsiho je OK
+2022-03-28 10:58:54.273534 : [221469, 174163, 152772, 138051, 119555, 116403, 112607, 111149, 108515, 103102, 98797, 98730, 95100, 93333, 92937, 89885, 86320, 85853, 85500, 85044]
+2022-03-28 10:58:54.273534 : [221469, 174163, 152772, 138051, 119555, 116403, 112607, 111149, 108515, 103102, 98797, 98730, 95100, 93333, 92937, 89885, 86320, 85853, 85500, 85044]
+2022-03-28 10:58:56.440911 : 
+                             
+                             
+2022-03-28 10:58:56.440911 : ====== WebDriver manager ======
+                             
+2022-03-28 10:58:56.462903 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:58:56.462903 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:58:56.542878 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:59:33.235596 : https://www.etravel.cz/hotely/recko/kreta/paleochora/pal-beach?DS=2&GIATA=18461&D=63220|63281|63373|63442|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428&HID=45046&MT=1&RT=15&NN=7&DF=2022-09-01|2022-09-25&RD=2022-09-15&DD=2022-09-08&AC1=2&KC1=1&KA1=5&IC1=0&DP=4312&TO=4305|4309|2682|4308|4312&TOM=4305|4309|2682|4308|4312&MNN=7&NNM=7|8|9&TT=1&TTM=0&PID=130271&DPR=Hotelbeds
+2022-03-28 10:59:33.236596 : https://www.etravel.cz/vysledky-vyhledavani?d=63220|63281|63373|63442|63311|63314|63316|63319|63324|63333|63390|63402|63408|63409|63471|63219|63341|63428&tt=0&to=4305|4309|2682|4308|4312&dd=2022-09-01&rd=2022-09-25&nn=7|8|9&ka1=5&kc1=1&ac1=2
+2022-03-28 10:59:35.567337 : 
+                             
+                             
+2022-03-28 10:59:35.567337 : ====== WebDriver manager ======
+                             
+2022-03-28 10:59:35.623763 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:59:35.623763 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:59:35.712199 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 10:59:55.183246 : Polopenze
+2022-03-28 10:59:55.225233 : Snídanì
+2022-03-28 10:59:55.265220 : Snídanì
+2022-03-28 10:59:55.300208 : Bez stravování
+2022-03-28 10:59:55.349193 : Bez stravování
+2022-03-28 10:59:55.384181 : All inclusive
+2022-03-28 10:59:55.420170 : Snídanì
+2022-03-28 10:59:55.451161 : Polopenze
+2022-03-28 10:59:55.486149 : Polopenze
+2022-03-28 10:59:55.523137 : Snídanì
+2022-03-28 10:59:55.558125 : Plná penze Plus
+2022-03-28 10:59:55.600112 : Snídanì
+2022-03-28 10:59:55.637101 : Snídanì
+2022-03-28 10:59:55.746067 : Polopenze
+2022-03-28 10:59:55.788053 : Bez stravování
+2022-03-28 10:59:55.827040 : Polopenze
+2022-03-28 10:59:55.874025 : Snídanì
+2022-03-28 10:59:55.907015 : Polopenze
+2022-03-28 10:59:55.954000 : Snídanì
+2022-03-28 10:59:58.280099 : 
+                             
+                             
+2022-03-28 10:59:58.280099 : ====== WebDriver manager ======
+                             
+2022-03-28 10:59:58.331083 : Current google-chrome version is 99.0.4844
+                             
+2022-03-28 10:59:58.331083 : Get LATEST chromedriver version for 99.0.4844 google-chrome
+                             
+2022-03-28 10:59:58.542126 : Driver [C:\Users\KDK\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+                             
+2022-03-28 11:00:13.832775 : nenasle se exponea banner
+2022-03-28 11:00:16.063061 : |||||HOTEL CISLO|||||||
+2022-03-28 11:00:16.063061 : 1
+2022-03-28 11:00:16.063061 : 1
+2022-03-28 11:00:16.063061 : 1
+2022-03-28 11:00:16.136038 : 30 780

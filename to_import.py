@@ -26,12 +26,35 @@ URL_FT_results = URL + "hledani-vysledky?q="
 URL_groupsearch = URL + "vysledky-vyhledavani?tt=1&dd=2022-08-04&rd=2022-09-30&nn=7|8|9&ka1=5&kc1=1&ac1=2"
 def setUp(self):
   self.driver = webdriver.Chrome(ChromeDriverManager().install())
+  generalDriverWaitImplicit(self.driver)
   #self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
   #self.driver = webdriver.Opera(executable_path=OperaDriverManager().install())
   #self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 
 def tearDown(self):
   self.driver.quit()
+
+def generalDriverWaitImplicit(driver):
+  driver.implicitly_wait(25)
+def acceptConsent(driver):
+
+  generalDriverWaitImplicit(driver)
+  # time.sleep(5)
+  try:
+    element = driver.execute_script(
+      """return document.querySelector('#usercentrics-root').shadowRoot.querySelector("button[data-testid='uc-accept-all-button']")""")
+    print(element)
+  except NoSuchElementException:
+    print("NOSUCH")
+  except TimeoutException:
+    pass
+
+  if element != None:
+    element.click()
+
+  else:
+    print("consent pass")
+    pass
 
 def returnLocatorForMealHotelKarty(poziceHotelu):
     string1 = "/ html / body / div[ @ id = 'app'] / div[ @ id = 'c_page-mainSearch'] / div[ @class ='hotel-results-section'] / div[@ class ='hotel-results-content'][1] / div[@ class ='tile-hotel-section'] / div[@ class ='items'] / div[@ class ='flex']["
@@ -58,7 +81,7 @@ def sendEmail(msg):
   server.sendmail(fromx, to, msg.as_string())
   server.quit()
 
-def acceptConsent(driver):
+def acceptConsent5(driver):
   time.sleep(2)
   try:
     element = driver.execute_script(
