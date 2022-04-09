@@ -18,7 +18,8 @@ queryList = querySDO+queryCommon+queryHotely
 failed_query = ["mitsis","Domes Aulüs","Naftilos", ]
 
 HPLupaFullTextXpath = "//*[@class='f_icon f_icon--magnifier']"
-HPinputBoxFullTextXpath = "//*[@class='flex-grow outline-none px-2 py-2 bg-transparent']"
+#HPinputBoxFullTextXpath = "//*[@class='flex-grow outline-none px-2 py-2 bg-transparent']"
+HPinputBoxFullTextXpath = "//*[@class='grow outline-none px-2 py-2 bg-transparent']"
 fullTextNaseptavacKartaHoteluXpath = "//*[@class='aspect-w-16 aspect-h-10']"
 fullTextNaseptavacTextResultsXpath = "//*[@class='text-base']"
 fullTextResultsKartaHoteluXpath = "//*[@class='aspect-w-16 aspect-h-10']"
@@ -49,7 +50,8 @@ class Test_Fulltext_C(unittest.TestCase):
             # inputBox.send_keys(queryList[poziceQueryItem])
             time.sleep(0.7)
             generalDriverWaitImplicit(self.driver)
-            wait.until(EC.visibility_of(self.driver.find_element_by_xpath(HPinputBoxFullTextXpath))).send_keys(queryList[poziceQueryItem])
+            #wait.until(EC.visibility_of(self.driver.find_element_by_xpath(HPinputBoxFullTextXpath))).send_keys(queryList[poziceQueryItem])
+            self.driver.find_element_by_xpath(HPinputBoxFullTextXpath).send_keys(queryList[poziceQueryItem])
             time.sleep(0.7)
             # inputBox.send_keys(Keys.ENTER)
             print(queryList[poziceQueryItem].upper())
