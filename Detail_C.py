@@ -30,9 +30,11 @@ class TestDetailHotelu_C(unittest.TestCase):
 
     def test_detail_fotka(self):
         self.driver.get(URL_detail)
-        acceptConsent(self.driver)
+        self.driver.maximize_window()
         time.sleep(1)
-        closeExponeaBanner(self.driver)
+
+        acceptConsent(self.driver)
+
         imageDetail = self.driver.find_element_by_xpath(imageDetailFirstXpath)
         imageDetailSrc = imageDetail.get_attribute("src")
         print( imageDetailSrc)
@@ -58,8 +60,10 @@ class TestDetailHotelu_C(unittest.TestCase):
     def test_detail_terminy_filtr_meal(self):
         self.driver.get(URL_detail_all_inclusive)
         wait = WebDriverWait(self.driver, 150000)
-        acceptConsent(self.driver)
+        self.driver.maximize_window()
         time.sleep(1)
+        acceptConsent(self.driver)
+
         closeExponeaBanner(self.driver)
         try:
             terminyCeny = self.driver.find_element_by_xpath(terminyAcenyScrollMenuXpath)
@@ -102,15 +106,17 @@ class TestDetailHotelu_C(unittest.TestCase):
                 msg = "na detailu jsem vyfiltroval stravu " + zvolenaStravaVboxu + "ale pry to nesedi říká python" + url
                 sendEmail(msg)
                 y = y + 1
-        time.sleep(1)
+        #time.sleep(100)
         ##print(stravaVterminech)
 
     def test_detail_terminy_filtr_airport(self):
             self.driver.get(URL_detail_airport_praha)
             wait = WebDriverWait(self.driver, 150000)
-            acceptConsent(self.driver)
+            self.driver.maximize_window()
             time.sleep(1)
-            closeExponeaBanner(self.driver)
+
+            acceptConsent(self.driver)
+
             try:
                 terminyCeny = self.driver.find_element_by_xpath(terminyAcenyScrollMenuXpath)
                 wait.until(EC.visibility_of(terminyCeny))
@@ -152,5 +158,5 @@ class TestDetailHotelu_C(unittest.TestCase):
                     msg = "na detailu jsem vyfiltroval stravu " + zvolenaAiportVboxu + "ale pry to nesedi říká python" + url
                     sendEmail(msg)
                     y = y + 1
-            time.sleep(1)
+            #time.sleep(100)
             ##print(stravaVterminech)
