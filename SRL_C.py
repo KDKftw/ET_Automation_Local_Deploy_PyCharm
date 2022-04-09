@@ -205,7 +205,6 @@ class Test_SRL_C(unittest.TestCase):
         print(currentUrl)
         print(URL_SRL)
         assert currentUrl != URL_SRL
-
     def test_SRL_filtr_strava(self):
         driver = self.driver
         driver.get(URL_SRL)
@@ -230,14 +229,15 @@ class Test_SRL_C(unittest.TestCase):
             x=x+1
 
     def test_srl_C(self):
+        self.driver.maximize_window()
         self.driver.get(URL_SRL)
         #wait = WebDriverWait(self.driver, 150000)
         wait = WebDriverWait(self.driver, 15)
 
-        time.sleep(2)
+
+        time.sleep(1)
+
         acceptConsent(self.driver)
-        time.sleep(2)
-        closeExponeaBanner(self.driver)
 
         #wait.until(EC.visibility_of(self.driver.find_element_by_xpath(chatCrossXpath)).click())
         generalDriverWaitImplicit(self.driver)
@@ -277,8 +277,9 @@ class Test_SRL_C(unittest.TestCase):
             print(x)
 
         #p.press("pagedown")
-        detailHoteluButtonElement = self.driver.find_elements_by_xpath(detailHoteluButtonXpath[x])
-        self.driver.execute_script("arguments[0].scrollIntoView();", detailHoteluButtonElement)
+        detailHoteluButtonElement = self.driver.find_elements_by_xpath(detailHoteluButtonXpath)
+        self.driver.execute_script("arguments[0].scrollIntoView();", detailHoteluButtonElement[x])
+
         time.sleep(1)
         x=5
         for i in range(5):
@@ -336,8 +337,8 @@ class Test_SRL_C(unittest.TestCase):
             print(x)
 
         #p.press("pagedown")
-        detailHoteluButtonElement = self.driver.find_elements_by_xpath(detailHoteluButtonXpath[x])
-        self.driver.execute_script("arguments[0].scrollIntoView();", detailHoteluButtonElement)
+        detailHoteluButtonElement = self.driver.find_elements_by_xpath(detailHoteluButtonXpath)
+        self.driver.execute_script("arguments[0].scrollIntoView();", detailHoteluButtonElement[x])
         time.sleep(1)
         x = 15
         for i in range(5):
