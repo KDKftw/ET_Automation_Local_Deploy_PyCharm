@@ -1,6 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
-from to_import import acceptConsent, URL_FM, sendEmail, setUp, tearDown, URL_LM
+from to_import import acceptConsent, URL_FM, sendEmail, setUp, tearDown, URL_LM, generalDriverWaitImplicit
 import time
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
@@ -18,4 +18,5 @@ class Test_LM_D(unittest.TestCase):
         self.driver.maximize_window()
         acceptConsent(self.driver)
         rowKarty_imgHoteluKarty_D(self, self.driver)
+        generalDriverWaitImplicit(self.driver)
         assert (self.driver.find_element_by_xpath(destinationXpath)).is_displayed() == True
