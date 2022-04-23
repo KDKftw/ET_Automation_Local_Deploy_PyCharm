@@ -8,7 +8,8 @@ from LM_D import *
 
 from SDO_D import *
 from SRL_C import *
-#from SRL_D import *
+from SRL_D import *
+from HP_C import *
 import HtmlTestRunner
 
 def suite():
@@ -23,6 +24,10 @@ def suite():
     suite.addTest(Test_Fulltext_C("test_fulltext_naseptavac"))
     suite.addTest(Test_Fulltext_C("test_fulltext_results_status_check"))
     suite.addTest(Test_Groupsearch_D("test_groupsearch_D"))
+
+    suite.addTest(Test_HP_C('test_HP_zlutak_to_SRL'))
+    suite.addTest(Test_HP_C('test_HP_zlutak_to_groupsearch'))
+    suite.addTest(Test_HP_C('test_HP_banner_destination_to_SDO'))
     suite.addTest(Test_HP_D("test_HP_D"))
     suite.addTest(Test_LM_D("test_LM_D"))
 
@@ -32,7 +37,8 @@ def suite():
     suite.addTest(Test_SRL_C('test_SRL_map'))
     suite.addTest(Test_SRL_C('test_SRL_filtr_strava'))
     suite.addTest(Test_SRL_C('test_srl_C'))
-    #suite.addTest(TestSRL_D('test_SRL_D'))
+    suite.addTest(TestSRL_D('test_SRL_D'))
+
     return suite
 
 
