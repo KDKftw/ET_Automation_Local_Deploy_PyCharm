@@ -9,6 +9,8 @@ from import_test_units_Xpaths import rowKarty_imgHoteluKarty_D
 
 SDOsectionXpath = "//*[@class='sdo-section']"
 
+
+
 class TestSDO_D(unittest.TestCase):
     def setUp(self):
         setUp(self)

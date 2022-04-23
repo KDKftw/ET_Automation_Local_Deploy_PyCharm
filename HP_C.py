@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from groupsearch_D import groupSearch_D
 import time
 from SRL_D import SRL_D
+from SDO_D import SRL_D
 HPvyhledatZajezdyButtonXpath = "//*[@class='f_filterMainSearch'] //*[contains(text(), 'Vyhledat dovolenou')]"
 HPkamPojedeteButtonXpath = "//*[contains(text(), 'Kam se chystáte?')]"
 HPzlutakEgyptDestinaceXpath = "//*[@class='f_filterMainSearch']//*[@class='flex flex-row overflow-hidden']//*[@class='flex flex-col pb-2']//*[contains(text(), 'Egypt')]"
@@ -20,7 +21,7 @@ HPzlutakObsazenost2plus1Xpath = "//*[contains(text(), 'Rodina')]"
 HPzlutakPotvrditAvyhledatXpath = "//*[@class='f_filterHolder js_filterHolder f_set--active']//*[contains(text(), 'Potvrdit a vyhledat')]"
 HPnejlepsiZajezdySwitchButtonXpath = "//*[@class='f_switch-button']"
 HPnejlepsiZajezdyVypisXpath = "//*[@class='f_tourTable-tour']"
-
+HPstatyKartyXpath = "//*[@class='content']"
 
 class Test_HP_C(unittest.TestCase):
     def setUp(self):
@@ -63,3 +64,18 @@ class Test_HP_C(unittest.TestCase):
         time.sleep(1)
         wait.until(EC.visibility_of(self.driver.find_element_by_xpath(HPzlutakPotvrditAvyhledatXpath))).click()
         SRL_D(self, self.driver)
+
+
+    def test_HP_banner_destination_to_SDO(self):
+        self.driver.maximize_window()
+        self.driver.get(URL)
+        wait = WebDriverWait(self.driver, 300)
+
+        acceptConsent(self.driver)
+        time.sleep(1)
+        HPstatyKartyElement=self.driver.find_element_by_xpath(HPstatyKartyXpath)
+        self.driver.execute_script("arguments[0].scrollIntoView();", HPstatyKartyElement)
+
+        time.sleep(0.666)
+        HPstatyKartyElement.click()
+        time.sleep(50)
