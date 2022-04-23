@@ -7,6 +7,10 @@ from selenium.webdriver.support import expected_conditions as EC
 import unittest
 import pyautogui as p
 
+
+SRLhotelyKartyXpath = "//*[@class='flex']"
+#SRLfotkaHoteluXpath = "//*[@class='img-wrap']"
+SRLfotkaHoteluXpath= "//*[@class='splide__slide is-active is-visible']"
 totalPriceXpath = "//*[@class='price-amount']"
 class TestSRL_D(unittest.TestCase):
     def setUp(self):
