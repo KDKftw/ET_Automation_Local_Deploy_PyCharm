@@ -9,8 +9,14 @@ from import_test_units_Xpaths import rowKarty_imgHoteluKarty_D
 
 SDOsectionXpath = "//*[@class='sdo-section']"
 
+def SDO_D(self, driver):
+    generalDriverWaitImplicit(self.driver)
+    rowKarty_imgHoteluKarty_D(self, self.driver)
 
+    SDOsectionElement = self.driver.find_element_by_xpath(SDOsectionXpath)
 
+    assert SDOsectionElement.is_displayed() == True
+    print("sdo section visible true :  " + str(SDOsectionElement.is_displayed()))
 class TestSDO_D(unittest.TestCase):
     def setUp(self):
         setUp(self)
@@ -22,10 +28,4 @@ class TestSDO_D(unittest.TestCase):
 
         time.sleep(0.3)
         acceptConsent(self.driver)
-        generalDriverWaitImplicit(self.driver)
-        rowKarty_imgHoteluKarty_D(self, self.driver)
-
-        SDOsectionElement = self.driver.find_element_by_xpath(SDOsectionXpath)
-
-        assert SDOsectionElement.is_displayed() == True
-        print("sdo section visible true :  " + str(SDOsectionElement.is_displayed()))
+        SDO_D(self, self.driver)

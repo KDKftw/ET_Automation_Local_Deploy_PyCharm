@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from groupsearch_D import groupSearch_D
 import time
 from SRL_D import SRL_D
-from SDO_D import SRL_D
+from SDO_D import SDO_D
 HPvyhledatZajezdyButtonXpath = "//*[@class='f_filterMainSearch'] //*[contains(text(), 'Vyhledat dovolenou')]"
 HPkamPojedeteButtonXpath = "//*[contains(text(), 'Kam se chystáte?')]"
 HPzlutakEgyptDestinaceXpath = "//*[@class='f_filterMainSearch']//*[@class='flex flex-row overflow-hidden']//*[@class='flex flex-col pb-2']//*[contains(text(), 'Egypt')]"
@@ -79,3 +79,4 @@ class Test_HP_C(unittest.TestCase):
         time.sleep(0.666)
         HPstatyKartyElement.click()
         time.sleep(50)
+        SDO_D(self.driver)
