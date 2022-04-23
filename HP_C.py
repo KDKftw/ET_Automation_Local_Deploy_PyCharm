@@ -65,7 +65,6 @@ class Test_HP_C(unittest.TestCase):
         wait.until(EC.visibility_of(self.driver.find_element_by_xpath(HPzlutakPotvrditAvyhledatXpath))).click()
         SRL_D(self, self.driver)
 
-
     def test_HP_banner_destination_to_SDO(self):
         self.driver.maximize_window()
         self.driver.get(URL)
@@ -78,5 +77,5 @@ class Test_HP_C(unittest.TestCase):
 
         time.sleep(0.666)
         HPstatyKartyElement.click()
-        time.sleep(50)
-        SDO_D(self.driver)
+        time.sleep(6.666)
+        SDO_D(self, self.driver)
