@@ -25,6 +25,7 @@ URL_detail_all_inclusive = URL_detail + "&mmt=5"
 URL_detail_airport_praha = URL_detail + "&tom=4312"
 URL_FT_results = URL + "hledani-vysledky?q="
 URL_groupsearch = URL + "vysledky-vyhledavani?tt=1&dd=2022-08-04&rd=2022-09-30&nn=7|8|9&ka1=5&kc1=1&ac1=2"
+URL_SDO = URL + "turecko"
 def setUp(self):
   self.driver = webdriver.Chrome(ChromeDriverManager().install())
   generalDriverWaitImplicit(self.driver)

@@ -6,7 +6,7 @@ from groupsearch_D import *
 from HP_D import *
 from LM_D import *
 
-#from SDO_D import *
+from SDO_D import *
 from SRL_C import *
 #from SRL_D import *
 import HtmlTestRunner
@@ -26,7 +26,7 @@ def suite():
     suite.addTest(Test_HP_D("test_HP_D"))
     suite.addTest(Test_LM_D("test_LM_D"))
 
-    #suite.addTest(TestSDO_D('test_SDO_D'))
+    suite.addTest(TestSDO_D('test_SDO_D'))
     suite.addTest(Test_SRL_C('test_SRL_sort_cheapest'))
     suite.addTest(Test_SRL_C('test_SRL_sort_expensive'))
     suite.addTest(Test_SRL_C('test_SRL_map'))
