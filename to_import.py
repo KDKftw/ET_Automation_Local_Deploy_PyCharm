@@ -11,6 +11,7 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from to_import_secret import emailPass
 from selenium import webdriver
+from to_import_secret import comandExecutor
 from webdriver_manager.chrome import ChromeDriverManager
 URL = "https://www.etravel.cz/"
 URL_FM = URL+"first-minute"
@@ -27,7 +28,10 @@ URL_FT_results = URL + "hledani-vysledky?q="
 URL_groupsearch = URL + "vysledky-vyhledavani?tt=1&dd=2022-08-04&rd=2022-09-30&nn=7|8|9&ka1=5&kc1=1&ac1=2"
 URL_SDO = URL + "turecko"
 def setUp(self):
-  self.driver = webdriver.Chrome(ChromeDriverManager().install())
+  #self.driver = webdriver.Chrome(ChromeDriverManager().install())
+  self.driver = webdriver.Remote(
+      command_executor=comandExecutor,
+      desired_capabilities=desired_cap)
   generalDriverWaitImplicit(self.driver)
   #self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
   #self.driver = webdriver.Opera(executable_path=OperaDriverManager().install())
